@@ -1,6 +1,8 @@
 package com.dagorik.bluetooth
 
+import android.Manifest
 import android.bluetooth.BluetoothDevice
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -8,8 +10,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 import android.text.TextUtils
+import androidx.core.content.ContextCompat
 import com.robotpajamas.blueteeth.BlueteethDevice
 import com.robotpajamas.blueteeth.BlueteethManager
+import androidx.core.app.ActivityCompat
+import android.content.DialogInterface
+import androidx.appcompat.app.AlertDialog
 
 
 class MainActivityLowEnergy : AppCompatActivity(), OnClickListener {
@@ -23,6 +29,7 @@ class MainActivityLowEnergy : AppCompatActivity(), OnClickListener {
         setContentView(R.layout.activity_main)
 
 //        viewAdapter = BluetoothListAdapter(itemList,this)
+
 
         recycler_view.apply {
             layoutManager = LinearLayoutManager(this@MainActivityLowEnergy)

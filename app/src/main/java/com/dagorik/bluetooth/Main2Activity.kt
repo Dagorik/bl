@@ -10,7 +10,12 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 import android.bluetooth.BluetoothAdapter
 import android.os.ParcelUuid
+import androidx.core.app.ActivityCompat
 import com.github.douglasjunior.bluetoothclassiclibrary.*
+import android.widget.Toast
+import android.content.pm.PackageManager
+
+
 
 
 class Main2Activity : AppCompatActivity(), OnClickListener {
@@ -33,14 +38,15 @@ class Main2Activity : AppCompatActivity(), OnClickListener {
             adapter = viewAdapter
         }
 
-
         config = BluetoothConfiguration()
         config.context = applicationContext
         config.bluetoothServiceClass = BluetoothClassicService::class.java
         config.bufferSize = 1024
-        config.characterDelimiter = '\n'
+        config.characterDelimiter = '1'
         config.deviceName = "Example Blue"
-        config.uuid = UUID.fromString("0000111f-0000-1000-8000-00805f9b34fb");
+        config.uuidService = UUID.fromString("0000ffe0-0000-1000-8000-00805f9b34fb");
+        config.uuidCharacteristic = UUID.fromString("0000ffe1-0000-1000-8000-00805f9b34fb");
+        config.transport = BluetoothDevice.TRANSPORT_LE;
         config.callListenersInMainThread = true
 
 
@@ -95,11 +101,11 @@ class Main2Activity : AppCompatActivity(), OnClickListener {
     override fun onClick(bluetoothDeviceModel: BluetoothDevice) {
         Log.e("CLICK", bluetoothDeviceModel.name)
         Log.e("CLICK","----" + bluetoothDeviceModel.uuids )
-        //config.uuid = UUID.fromString(bluetoothDeviceModel.uuids.get()) // Required
+//        config.uuid = UUID.fromString(bluetoothDeviceModel.uuids[0].toString()) // Required
+//        config.uuidCharacteristic = UUID.fromString(bluetoothDeviceModel.uuids[0].toString()) // Required
+//        config.transport = BluetoothDevice.TRANSPORT_LE;
         val x = BluetoothDeviceDecorator(bluetoothDeviceModel)
         service.connect(x.device)
-
-
 
     }
 }
