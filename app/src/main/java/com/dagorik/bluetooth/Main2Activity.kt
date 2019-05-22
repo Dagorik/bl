@@ -42,11 +42,11 @@ class Main2Activity : AppCompatActivity(), OnClickListener {
         config.context = applicationContext
         config.bluetoothServiceClass = BluetoothClassicService::class.java
         config.bufferSize = 1024
-        config.characterDelimiter = '1'
+        config.characterDelimiter = '\n'
         config.deviceName = "Example Blue"
-        config.uuidService = UUID.fromString("0000ffe0-0000-1000-8000-00805f9b34fb");
-        config.uuidCharacteristic = UUID.fromString("0000ffe1-0000-1000-8000-00805f9b34fb");
-        config.transport = BluetoothDevice.TRANSPORT_LE;
+        config.uuidService = UUID.fromString("fa87c0d0-afac-11de-8a39-0800200c9a66")
+        //config.uuidCharacteristic = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB")
+        config.transport = BluetoothDevice.TRANSPORT_AUTO
         config.callListenersInMainThread = true
 
 

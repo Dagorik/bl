@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/dialog_rounded_bg"
+              android:orientation="vertical"
+              android:padding="1dp">
+
+ <RelativeLayout
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:gravity="center_vertical|right">
+
+  <ProgressBar
+   android:id="@+id/progress"
+   style="?android:attr/progressBarStyleSmall"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content"
+   android:layout_alignParentLeft="true"
+   android:layout_centerInParent="true"
+   android:layout_marginLeft="10dp"
+   android:indeterminateOnly="true"
+   android:visibility="invisible"/>
+
+  <Button
+   android:id="@+id/scan_button"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content"
+   android:layout_alignParentRight="true"
+   android:layout_alignParentTop="true"
+   android:background="#0000"
+   android:text="SCAN"
+   android:textColor="#8e24aa"/>
+ </RelativeLayout>
+
+ <ListView
+  android:id="@+id/device_list_view"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:minHeight="200dp"
+  android:paddingBottom="20dp"
+  android:paddingTop="20dp"/>
+
+ <LinearLayout
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:gravity="center_vertical|right"
+  android:orientation="horizontal">
+
+  <Button
+   android:id="@+id/cancel_button"
+   android:layout_width="0dp"
+   android:layout_height="50dp"
+   android:layout_weight="1"
+   android:background="#0000"
+   android:text="CANCEL"
+   android:textColor="#8e24aa"/>
+
+  <Button
+   android:id="@+id/ok_button"
+   android:layout_width="0dp"
+   android:layout_height="50dp"
+   android:layout_weight="1"
+   android:background="#0000"
+   android:text="OK"
+   android:textColor="#8e24aa"/>
+ </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ <item name="bt_device_icon" type="id"/>
+ <item name="bt_device_name" type="id"/>
+ <item name="bt_device_address" type="id"/>
+</resources>
